@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --bg: #0b1020; }
+body { background: linear-gradient(180deg,#071126,#0b1020); color: #e6eef8; }
+.light body { background: white; color: #111827; }
+
+.input { @apply w-full px-3 py-2 rounded bg-white/10 border border-white/20 focus:outline-none; }
