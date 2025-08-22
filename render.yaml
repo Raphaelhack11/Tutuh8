@@ -1,0 +1,79 @@
+services:
+  - type: web
+    name: profit-bliss-server
+    env: node
+    plan: free
+    rootDir: server
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: JWT_SECRET
+        generateValue: true
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: FRONTEND_URL
+        value: https://profitbliss-client.onrender.com
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: CRYPTO_REQUIRED_CONFIRMATIONS
+        value: "1"
+      - key: ROI_WORKER_INTERVAL_MINUTES
+        value: "60"
+      - key: ADMIN_EMAIL
+        value: admin@profitbliss.com
+      - key: ADMIN_PASSWORD
+        value: admin123
+
+  - type: web
+    name: profit-bliss-client
+    env: node
+    plan: free
+    rootDir: client
+    buildCommand: "npm install && npm run build"
+    startCommand: "npx serve -s build"
+    envVars:
+      - key: VITE_API_BASE
+        value: https://profitbliss-server.onrender.comservices:
+  - type: web
+    name: profit-bliss-server
+    env: node
+    plan: free
+    rootDir: server
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: JWT_SECRET
+        generateValue: true
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: FRONTEND_URL
+        value: https://profitbliss-client.onrender.com
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: CRYPTO_REQUIRED_CONFIRMATIONS
+        value: "1"
+      - key: ROI_WORKER_INTERVAL_MINUTES
+        value: "60"
+      - key: ADMIN_EMAIL
+        value: admin@profitbliss.com
+      - key: ADMIN_PASSWORD
+        value: admin123
+
+  - type: web
+    name: profit-bliss-client
+    env: node
+    plan: free
+    rootDir: client
+    buildCommand: "npm install && npm run build"
+    startCommand: "npx serve -s build"
+    envVars:
+      - key: VITE_API_BASE
+        value: https://profitbliss-server.onrender.com
