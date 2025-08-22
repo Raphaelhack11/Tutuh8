@@ -1,3 +1,4 @@
+import userExtra from "./routes/userExtra.js";app.use("/api/user", userExtra);
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
